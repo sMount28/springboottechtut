@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" data-bs-theme="light" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Professor Dashboard | Singapore Management University</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/Navbar-Right-Links-icons.css">
+</head>
+<body>
+    <header>
+    <nav class="navbar navbar-expand-lg" style="background-color: #0a1650;">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/}">
+                <img src="/img/smu_logo.png" alt="Singapore Management University Logo" height="60" width="120" class="d-inline-block align-top" style="filter: brightness(0) invert(1);">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home" style="color: #ffffff;">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" style="color: #ffffff;">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#academics" style="color: #ffffff;">Academics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research" style="color: #ffffff;">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#admissions" style="color: #ffffff;">Admissions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" style="color: #ffffff;">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout" style="color: #ffffff;">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <div class="container py-4">
+        <div class="row mb-4">
+            <div class="col">
+                <h1 class="text-primary fw-bold">Professor Dashboard</h1>
+                <p class="text-muted" th:text="'Welcome back, ' + ${Name} + '. View your courses and schedule peer evaluations.'">
+                    Welcome back, Professor. View your courses and schedule peer evaluations.
+                </p>
+
+            </div>
+        </div>
+
+        <div th:each="course : ${Courses}" class="row mb-3">
+            <div class="col">
+                <a th:href="@{{cid}/schedulePeerEvaluations(cid=${course.getCourseId()})}" class="btn btn-primary" th:text="${course.getCourseName()}"></a>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+    <footer style="background-color: #0a1650; color: #ffffff; padding: 15px 0; text-align: center;">
+        <div class="container">
+            <p style="margin: 0; font-size: 14px;">© 2025 Singapore Management University. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

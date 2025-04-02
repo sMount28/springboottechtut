@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" data-bs-theme="light" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Log In | Singapore Management University</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/Navbar-Right-Links-icons.css}">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg" style="background-color: #0a1650;">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/}">
+                <img src="/img/smu_logo.png" alt="Singapore Management University Logo" height="60" width="120" class="d-inline-block align-top" style="filter: brightness(0) invert(1);">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home" style="color: #ffffff;">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" style="color: #ffffff;">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#academics" style="color: #ffffff;">Academics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research" style="color: #ffffff;">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#admissions" style="color: #ffffff;">Admissions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" style="color: #ffffff;">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid p-0" style="flex: 1 0 auto;">
+    <div class="row m-0" style="height: 100%;">
+        <div class="col-md-7 p-0 d-none d-md-block" style="background-image: url('https://picsum.photos/1000/1200?random=1'); background-size: cover; background-position: center; height: 100%;">
+            <div style="background-color: rgba(10, 22, 80, 0.75); height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center; padding: 40px;">
+                <div style="max-width: 500px; margin-left: auto; margin-right: auto;">
+                    <h1 style="color: #ffffff; font-weight: 600; margin-bottom: 20px; font-size: 2.5rem;">Welcome to Singapore Management University</h1>
+                    <p style="color: #ffffff; font-size: 1.1rem; line-height: 1.6;">
+                        Singapore Management University (SMU) is internationally recognized for its world-class research and distinguished teaching. We are known for our interactive and technologically enabled pedagogy of seminar-style teaching in small-sized classes.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 p-0" style="height: 100%; background-color: #ffffff; display: flex; flex-direction: column; justify-content: center; padding: 40px;">
+            <div style="max-width: 400px; width: 100%; margin-left: auto; margin-right: auto;">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <h2 style="color: #0a1650; margin-top: 20px; font-weight: 600;">Sign In</h2>
+                    <p style="color: #666666;">Access your SMU services and resources</p>
+                </div>
+                <form method="post" th:action="@{/userLogin}">
+                    <div class="mb-3">
+                        <label for="email" class="form-label" style="color: #0a1650; font-weight: 500;">Email Address</label>
+                        <input id="email" type="email" class="form-control" name="email" placeholder="Enter your email address" style="border-color: #cccccc; padding: 12px; border-radius: 4px;">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label" style="color: #0a1650; font-weight: 500;">Password</label>
+                        <input id="password" type="password" class="form-control" name="password" placeholder="Enter your password" style="border-color: #cccccc; padding: 12px; border-radius: 4px;">
+                    </div>
+                    <div class="mb-4">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe" style="color: #0a1650;">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn" style="background-color: #a18347; border-color: #a18347; padding: 12px; width: 100%; font-weight: 500; margin-bottom: 20px;">Sign In</button>
+                    <div style="text-align: center;">
+                        <a href="#forgotpassword" style="color: #0a1650; text-decoration: none; font-weight: 500;">Forgot Password?</a>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="/createAccount" style="color: #0a1650; text-decoration: none; font-weight: 500;">Create a New Account</a>
+                    </div>
+                    <hr style="margin: 30px 0;">
+                    <div style="text-align: center;">
+                        <p style="color: #666666; margin-bottom: 20px;">Need help? Contact</p>
+                        <a href="#contact" style="color: #a18347; text-decoration: none; font-weight: 500;">IT Help Desk</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer style="background-color: #0a1650; color: #ffffff; padding: 15px 0; text-align: center;">
+    <div class="container">
+        <p style="margin: 0; font-size: 14px;">© 2025 Singapore Management University. All Rights Reserved.</p>
+    </div>
+</footer>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

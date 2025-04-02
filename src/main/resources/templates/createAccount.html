@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" data-bs-theme="light" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Create New Account | Singapore Management University</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/Navbar-Right-Links-icons.css}">
+</head>
+
+<body>
+    <header>
+    <nav class="navbar navbar-expand-lg" style="background-color: #0a1650;">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/}">
+                <img src="/img/smu_logo.png" alt="Singapore Management University Logo" height="60" width="120" class="d-inline-block align-top" style="filter: brightness(0) invert(1);">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home" style="color: #ffffff;">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" style="color: #ffffff;">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#academics" style="color: #ffffff;">Academics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research" style="color: #ffffff;">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#admissions" style="color: #ffffff;">Admissions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" style="color: #ffffff;">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <div class="container py-4">
+        <div class="row mb-4">
+            <div class="col">
+                <h1 class="text-primary fw-bold">Create a New Account</h1>
+            </div>
+            <div class="col-md-12">
+                <form action="/createNewAccount" method="post">
+                    <p>Select your account type:</p>
+                    <div class="mb-3">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="accountType" id="formCheck-1" value="Student">
+                                    <label class="form-check-label" for="formCheck-1">Student</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="accountType" id="formCheck-2" value="Professor">
+                                    <label class="form-check-label" for="formCheck-2">Professor</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mb-3">
+                        <p>Please enter your first name:</p>
+                        <input name="firstName" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <p>Please enter your last name:</p>
+                        <input name="lastName" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <p>Please enter your email:</p>
+                        <input name="userEmail" class="form-control" type="email">
+                    </div>
+                    <div class="mb-3">
+                        <p>Confirm email:</p>
+                        <input name="confirmEmail" class="form-control" type="email">
+                    </div>
+                    <div class="mb-3">
+                        <p>Please enter your password:</p>
+                        <input name="userPassword" class="form-control" type="password">
+                    </div>
+                    <div class="mb-3">
+                        <p>Confirm password:</p>
+                        <input name="confirmPassword" class="form-control" type="password">
+                    </div>
+                    <div class="mb-3"><input class="btn btn-primary" type="submit"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer style="background-color: #0a1650; color: #ffffff; padding: 15px 0; text-align: center;">
+        <div class="container">
+            <p style="margin: 0; font-size: 14px;">© 2025 Singapore Management University. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+
+</html>
